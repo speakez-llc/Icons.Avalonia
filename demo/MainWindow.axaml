@@ -38,106 +38,110 @@
 			<Setter Property="Height" Value="24" />
 		</Style>
 	</Window.Styles>
-
 	<DockPanel>
-		<Menu DockPanel.Dock="Top">
-			<MenuItem Header="File">
-				<MenuItem Header="About" i:MenuItem.Icon="fa-solid fa-circle-info" />
-			</MenuItem>
-		</Menu>
+		<DockPanel Dock="Top" LastChildFill="True">
+			<Menu >
+				<MenuItem Header="File" >
+					<MenuItem Header="About" i:MenuItem.Icon="fa-solid fa-circle-info" />
+				</MenuItem>
+				
+			</Menu>
+			<Button FontSize="12" HorizontalAlignment="Right" Content="Toggle Theme" i:Attached.Icon="{Binding ThemeIcon}" Click="ToggleTheme" DockPanel.Dock="Right" />
+		</DockPanel>
+		<DockPanel>
+			<Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto, Auto" Margin="4">
+				<!--Font Awesome-->
+				<Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="4">
+					<TextBlock Text="FontAwesome" Grid.Row="0" Grid.ColumnSpan="2" Classes="h1" />
 
-		<Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto, Auto" Margin="4">
-			<!--Font Awesome-->
-			<Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="4">
-				<TextBlock Text="FontAwesome" Grid.Row="0" Grid.ColumnSpan="2" Classes="h1" />
+					<!--github-->
+					<TextBlock Text="fa-brands fa-github" Grid.Row="1" />
+					<i:Icon Value="fa-brands fa-github" Grid.Row="1" Foreground="BlueViolet" />
+					<Button i:Attached.Icon="fa-brands fa-github" Grid.Row="1" Foreground="BlueViolet" Classes="disableByStyle" />
 
-				<!--github-->
-				<TextBlock Text="fa-brands fa-github" Grid.Row="1" />
-				<i:Icon Value="fa-brands fa-github" Grid.Row="1" Foreground="BlueViolet" />
-				<Button i:Attached.Icon="fa-brands fa-github" Grid.Row="1" Foreground="BlueViolet" Classes="disableByStyle" />
+					<!--solid address-card"-->
+					<TextBlock Text="fa-solid fa-address-card" Grid.Row="2" />
+					<i:Icon Value="fa-solid fa-address-card" Grid.Row="2" />
+					<Button i:Attached.Icon="fa-solid fa-address-card" Grid.Row="2" Classes="disableByStyle" />
 
-				<!--solid address-card"-->
-				<TextBlock Text="fa-solid fa-address-card" Grid.Row="2" />
-				<i:Icon Value="fa-solid fa-address-card" Grid.Row="2" />
-				<Button i:Attached.Icon="fa-solid fa-address-card" Grid.Row="2" Classes="disableByStyle" />
+					<!--regular address-card"-->
+					<TextBlock Text="fa-regular fa-address-card" Grid.Row="3" />
+					<i:Icon Value="fa-regular fa-address-card" Grid.Row="3" />
+					<Button i:Attached.Icon="fa-regular fa-address-card" Grid.Row="3" Classes="disableByStyle" />
 
-				<!--regular address-card"-->
-				<TextBlock Text="fa-regular fa-address-card" Grid.Row="3" />
-				<i:Icon Value="fa-regular fa-address-card" Grid.Row="3" />
-				<Button i:Attached.Icon="fa-regular fa-address-card" Grid.Row="3" Classes="disableByStyle" />
+					<!--info-->
+					<TextBlock Text="fa-solid fa(-circle)-info" Grid.Row="4" />
+					<Image Classes="icon" Grid.Row="4">
+						<Image.Source>
+							<i:IconImage Brush="DodgerBlue" Value="fa-solid fa-info" />
+						</Image.Source>
+					</Image>
+					<Button i:Attached.Icon="fa-solid fa-circle-info" Grid.Row="4" Foreground="DodgerBlue" Classes="disableByStyle" />
+				</Grid>
 
-				<!--info-->
-				<TextBlock Text="fa-solid fa(-circle)-info" Grid.Row="4" />
-				<Image Classes="icon" Grid.Row="4">
-					<Image.Source>
-						<i:IconImage Brush="DodgerBlue" Value="fa-solid fa-info" />
-					</Image.Source>
-				</Image>
-				<Button i:Attached.Icon="fa-solid fa-circle-info" Grid.Row="4" Foreground="DodgerBlue" Classes="disableByStyle" />
+				<!--Material Design-->
+				<Grid Grid.Column="1" RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="32,4,4,4">
+					<TextBlock Text="Material Design" Grid.Row="0" Grid.ColumnSpan="2" Classes="h1" />
+
+					<!--github-->
+					<TextBlock Text="mdi-github" Grid.Row="1" />
+					<i:Icon Value="mdi-github" Grid.Row="1" Foreground="BlueViolet" />
+					<Button i:Attached.Icon="mdi-github" Grid.Row="1" Foreground="BlueViolet" IsEnabled="{Binding IsEnabled}" />
+
+					<!--circle-medium-->
+					<TextBlock Text="mdi-circle-medium" Grid.Row="2" />
+					<i:Icon Value="mdi-circle-medium" Grid.Row="2" />
+					<Button i:Attached.Icon="mdi-circle-medium" Grid.Row="2" IsEnabled="{Binding IsEnabled}" />
+
+					<!--map-marker-outline-->
+					<TextBlock Text="mdi-map-marker-outline" Grid.Row="3" />
+					<i:Icon Value="mdi-map-marker-outline" Grid.Row="3" />
+					<Button i:Attached.Icon="mdi-map-marker-outline" Grid.Row="3" IsEnabled="{Binding IsEnabled}" />
+
+					<!--information-->
+					<TextBlock Text="mdi-information(-variant)" Grid.Row="4" />
+					<Image Classes="icon" Grid.Row="4">
+						<Image.Source>
+							<i:IconImage Brush="DodgerBlue" Value="mdi-information-variant" />
+						</Image.Source>
+					</Image>
+					<Button i:Attached.Icon="mdi-information" Grid.Row="4" Foreground="DodgerBlue" IsEnabled="{Binding IsEnabled}" />
+				</Grid>
+
+				<!--Animations-->
+				<Grid Grid.Column="2" RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="32,4,4,4">
+					<TextBlock Text="Animations" Grid.Row="0" Grid.ColumnSpan="2"  Classes="h1" />
+
+					<TextBlock Text="fa-spinner (Pulse)" Grid.Row="1" />
+					<i:Icon Value="fa-spinner" Animation="Pulse" Grid.Row="1" />
+					<Button Grid.Row="1" Classes="disableByStyle">
+						<i:Icon Value="fa-spinner" Animation="Pulse" />
+					</Button>
+
+					<TextBlock Text="fa-sync (Spin)" Grid.Row="2" />
+					<i:Icon Value="fa-sync" Animation="Spin" Grid.Row="2" />
+					<Button Grid.Row="2" Classes="disableByStyle">
+						<i:Icon Value="fa-sync" Animation="Spin" />
+					</Button>
+
+					<TextBlock Text="mdi-cog (Spin)" Grid.Row="3" />
+					<i:Icon Value="mdi-cog" Animation="Spin" Grid.Row="3" />
+					<Button Grid.Row="3" IsEnabled="{Binding IsEnabled}">
+						<i:Icon Value="fa-cog" Animation="Spin" />
+					</Button>
+
+					<TextBlock Text="mdi-progress-helper (Pulse)" Grid.Row="4" />
+					<i:Icon Value="mdi-progress-helper" Animation="Pulse" Grid.Row="4" />
+					<Button Grid.Row="4" IsEnabled="{Binding IsEnabled}">
+						<i:Icon Value="mdi-progress-helper" Animation="Pulse" />
+					</Button>
+				</Grid>
+
+				<!--Actions-->
+				<DockPanel Margin="4" Grid.Row="1">
+					<ToggleSwitch Name="ButtonToggle" OffContent="Buttons disabled" OnContent="Buttons enabled" IsChecked="{Binding IsEnabled}" />
+				</DockPanel>
 			</Grid>
-
-			<!--Material Design-->
-			<Grid Grid.Column="1" RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="32,4,4,4">
-				<TextBlock Text="Material Design" Grid.Row="0" Grid.ColumnSpan="2" Classes="h1" />
-
-				<!--github-->
-				<TextBlock Text="mdi-github" Grid.Row="1" />
-				<i:Icon Value="mdi-github" Grid.Row="1" Foreground="BlueViolet" />
-				<Button i:Attached.Icon="mdi-github" Grid.Row="1" Foreground="BlueViolet" IsEnabled="{Binding IsEnabled}" />
-
-				<!--circle-medium-->
-				<TextBlock Text="mdi-circle-medium" Grid.Row="2" />
-				<i:Icon Value="mdi-circle-medium" Grid.Row="2" />
-				<Button i:Attached.Icon="mdi-circle-medium" Grid.Row="2" IsEnabled="{Binding IsEnabled}" />
-
-				<!--map-marker-outline-->
-				<TextBlock Text="mdi-map-marker-outline" Grid.Row="3" />
-				<i:Icon Value="mdi-map-marker-outline" Grid.Row="3" />
-				<Button i:Attached.Icon="mdi-map-marker-outline" Grid.Row="3" IsEnabled="{Binding IsEnabled}" />
-
-				<!--information-->
-				<TextBlock Text="mdi-information(-variant)" Grid.Row="4" />
-				<Image Classes="icon" Grid.Row="4">
-					<Image.Source>
-						<i:IconImage Brush="DodgerBlue" Value="mdi-information-variant" />
-					</Image.Source>
-				</Image>
-				<Button i:Attached.Icon="mdi-information" Grid.Row="4" Foreground="DodgerBlue" IsEnabled="{Binding IsEnabled}" />
-			</Grid>
-
-			<!--Animations-->
-			<Grid Grid.Column="2" RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto" Margin="32,4,4,4">
-				<TextBlock Text="Animations" Grid.Row="0" Grid.ColumnSpan="2"  Classes="h1" />
-
-				<TextBlock Text="fa-spinner (Pulse)" Grid.Row="1" />
-				<i:Icon Value="fa-spinner" Animation="Pulse" Grid.Row="1" />
-				<Button Grid.Row="1" Classes="disableByStyle">
-					<i:Icon Value="fa-spinner" Animation="Pulse" />
-				</Button>
-
-				<TextBlock Text="fa-sync (Spin)" Grid.Row="2" />
-				<i:Icon Value="fa-sync" Animation="Spin" Grid.Row="2" />
-				<Button Grid.Row="2" Classes="disableByStyle">
-					<i:Icon Value="fa-sync" Animation="Spin" />
-				</Button>
-
-				<TextBlock Text="mdi-cog (Spin)" Grid.Row="3" />
-				<i:Icon Value="mdi-cog" Animation="Spin" Grid.Row="3" />
-				<Button Grid.Row="3" IsEnabled="{Binding IsEnabled}">
-					<i:Icon Value="fa-cog" Animation="Spin" />
-				</Button>
-
-				<TextBlock Text="mdi-progress-helper (Pulse)" Grid.Row="4" />
-				<i:Icon Value="mdi-progress-helper" Animation="Pulse" Grid.Row="4" />
-				<Button Grid.Row="4" IsEnabled="{Binding IsEnabled}">
-					<i:Icon Value="mdi-progress-helper" Animation="Pulse" />
-				</Button>
-			</Grid>
-
-			<!--Actions-->
-			<DockPanel Margin="4" Grid.Row="1">
-				<ToggleSwitch Name="ButtonToggle" OffContent="Buttons disabled" OnContent="Buttons enabled" IsChecked="{Binding IsEnabled}" />
-			</DockPanel>
-		</Grid>
+		</DockPanel>	
 	</DockPanel>
 </Window>
