@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.0.0 (2023-12-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Uses the new `IconImage` inside the `Icon` template. This may affect styling.
+* The `Icon` got an additional `Canvas` encapsulating the `Path`. This may affect styling.
+* replaces the template with a  `Path` inside  a `Viewbox` instead of an `Image`
+
+### Features
+
+* Adds `IconImage` ([ddd7bb4](https://github.com/speakez-llc/Icons.Avalonia/commit/ddd7bb406cb742906e66da449d14f2ecc72ed022))
+* Adds URL identification format for XML Namespace Definitions ([8128a6d](https://github.com/speakez-llc/Icons.Avalonia/commit/8128a6d75f6c29134a625cc611d976eb82e41c99))
+* **FontAwesome:** 🔄 icons changed. ([1f6b82c](https://github.com/speakez-llc/Icons.Avalonia/commit/1f6b82c924a41584f82e91116ff48f70e3b889a9))
+* **FontAwesome:** 🔄 icons changed. ([8e17fbc](https://github.com/speakez-llc/Icons.Avalonia/commit/8e17fbc9dcb8bf511ac0d50320558c0f4dc44c2b))
+* **Material Design:** 🔄 icons changed. ([5804439](https://github.com/speakez-llc/Icons.Avalonia/commit/5804439b434f8a8451bbd33b881a1d2bb829c581))
+* replaces the template with a  `Path` inside  a `Viewbox` instead of an `Image` ([f3792b5](https://github.com/speakez-llc/Icons.Avalonia/commit/f3792b52d50db6192d5c8e90fd90b977ae8b9774))
+* Sign assemblies with a strong key. ([1101b51](https://github.com/speakez-llc/Icons.Avalonia/commit/1101b51262d2ecb5ff0d5387ea98110943e955bd)), closes [#55](https://github.com/speakez-llc/Icons.Avalonia/issues/55)
+* Uses the new `IconImage` inside the `Icon` template. This may affect styling. ([ddd7bb4](https://github.com/speakez-llc/Icons.Avalonia/commit/ddd7bb406cb742906e66da449d14f2ecc72ed022))
+
+
+### Bug Fixes
+
+* `IconImage` raises `IAffectsRender.Invalidated` event for changes to be rendered. ([dadf0cd](https://github.com/speakez-llc/Icons.Avalonia/commit/dadf0cd1c6573664cc8904449f32087ae340a60d))
+* Calls `AffectsRender` to ensure a redraw if `Value` or `Animation` changed ([6a20461](https://github.com/speakez-llc/Icons.Avalonia/commit/6a20461db0289d1267b37dc2f6f2d6017617d926))
+* Do not stretch icon paths to full size. Otherwise icons like [circle-medium](https://pictogrammers.com/library/mdi/icon/circle-medium/) won't be rendered as expected. ([8182200](https://github.com/speakez-llc/Icons.Avalonia/commit/81822006afcee08301e93b9464d9055b9ce72f28))
+* Fixes the outdated interface documentation ([e695c03](https://github.com/speakez-llc/Icons.Avalonia/commit/e695c038b15483b93cef8c9b559214f03c1fa9eb))
+* Fixes workflow status badges in README ([8054d9f](https://github.com/speakez-llc/Icons.Avalonia/commit/8054d9fb5c2cb8c593331a9e3d0c36ca0e7a48dc))
+
 ## [9.0.1](https://github.com/Projektanker/Icons.Avalonia/compare/v9.0.0...v9.0.1) (2023-12-06)
 
 
